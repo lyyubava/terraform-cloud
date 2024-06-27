@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_s3_bucket" "this" {}
 
-resource "aws_s3_bucket" "already_exeisting_bucket" {
+resource "aws_s3_bucket" "already_existing_bucket" {
     bucket = "terraform-state-aekoow9loo7voh4on5p"
 }
 
