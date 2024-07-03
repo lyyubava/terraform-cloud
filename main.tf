@@ -8,13 +8,19 @@ resource "aws_s3_bucket" "this" {
       Environment = "prod"
     }
 }
+resource "aws_s3_bucket" "this1" {
+    tags = {
+      Name        = "My this1"
+      Environment = "prod"
+    }
+}
 
 resource "aws_s3_bucket" "already_existing_bucket" {
     bucket = "terraform-state-aekoow9loo7voh4on5p"
     tags = {
       Name        = "My bucket"
     }
-    depends_on = [ aws_s3_bucket.this ]
+    depends_on = [ aws_s3_bucket.this, aws_s3_bucket.this1  ]
     # depends_on = [ null_resource.sleep ]
 }
 
