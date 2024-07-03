@@ -25,7 +25,7 @@ resource "aws_s3_bucket" "this2" {
     timeouts {
       create = "2s"
     }
-    depends_on = [ null_resource.sleep ]
+    # depends_on = [ null_resource.sleep ]
 }
 
 resource "aws_s3_bucket" "this3" {
