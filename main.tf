@@ -47,22 +47,27 @@ resource "aws_s3_bucket" "this4" {
       create = "0s"
     }
 }
-resource "aws_s3_bucket" "already_existing_bucket" {
-    bucket = "terraform-state-aekoow9loo7voh4on5p"
-    tags = {
-      Name        = "My bucket"
-    }
-    depends_on = [ aws_s3_bucket.this, aws_s3_bucket.this1, aws_s3_bucket.this2, aws_s3_bucket.this3, aws_s3_bucket.this4 ]
-    # depends_on = [ null_resource.sleep ]
-}
 
-resource "null_resource" "sleep" {
-  provisioner "local-exec" {
-    command     = "sleep 60"
-    interpreter = ["bash", "-c"]
-
-  }
+output "bucket_this3" {
+    value = aws_s3_bucket.this4.bucket
+  
 }
+# resource "aws_s3_bucket" "already_existing_bucket" {
+#     bucket = "terraform-state-aekoow9loo7voh4on5p"
+#     tags = {
+#       Name        = "My bucket"
+#     }
+#     depends_on = [ aws_s3_bucket.this, aws_s3_bucket.this1, aws_s3_bucket.this2, aws_s3_bucket.this3, aws_s3_bucket.this4 ]
+#     # depends_on = [ null_resource.sleep ]
+# }
+
+# resource "null_resource" "sleep" {
+#   provisioner "local-exec" {
+#     command     = "sleep 60"
+#     interpreter = ["bash", "-c"]
+
+#   }
+# }
 # resource "aws_ssm_parameter" "dependant_resource" {
 #     name = "/dependant/bucket_id"
 #     value = aws_s3_bucket.already_exeisting_bucket.id
