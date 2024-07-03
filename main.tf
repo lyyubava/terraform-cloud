@@ -2,12 +2,12 @@ provider "aws" {
     region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "this" {
-    tags = {
-      Name        = "My bucket"
-      Environment = "prod"
-    }
-}
+# resource "aws_s3_bucket" "this" {
+#     tags = {
+#       Name        = "My bucket"
+#       Environment = "prod"
+#     }
+# }
 
 # resource "aws_s3_bucket" "already_existing_bucket" {
 #     bucket = "terraform-state-aekoow9loo7voh4on5p"
