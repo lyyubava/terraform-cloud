@@ -27,6 +27,16 @@ resource "aws_s3_bucket" "this2" {
     }
     depends_on = [ null_resource.sleep ]
 }
+
+resource "aws_s3_bucket" "this3" {
+    tags = {
+      Name        = "My this1"
+      Environment = "prod"
+    }
+    timeouts {
+      create = "1s"
+    }
+}
 resource "aws_s3_bucket" "already_existing_bucket" {
     bucket = "terraform-state-aekoow9loo7voh4on5p"
     tags = {
