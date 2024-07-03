@@ -2,15 +2,19 @@ provider "aws" {
     region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "this" {}
-
-resource "aws_s3_bucket" "already_existing_bucket" {
-    bucket = "terraform-state-aekoow9loo7voh4on5p"
+resource "aws_s3_bucket" "this" {
     tags = {
       Name        = "My bucket"
     }
-    # depends_on = [ null_resource.sleep ]
 }
+
+# resource "aws_s3_bucket" "already_existing_bucket" {
+#     bucket = "terraform-state-aekoow9loo7voh4on5p"
+#     tags = {
+#       Name        = "My bucket"
+#     }
+#     # depends_on = [ null_resource.sleep ]
+# }
 
 # resource "null_resource" "sleep" {
 #   provisioner "local-exec" {
