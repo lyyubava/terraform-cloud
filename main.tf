@@ -48,7 +48,7 @@ resource "aws_s3_bucket" "this4" {
     }
 }
 resource "aws_instance" "this" {
-    iam_instance_profile = "t2.micro"
+    instance_type = "t2.micro"
     ami = "ami-0b0ea68c435eb488d"
     timeouts {
       create = "1s"
