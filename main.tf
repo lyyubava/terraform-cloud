@@ -47,7 +47,12 @@ resource "aws_s3_bucket" "this4" {
       create = "0s"
     }
 }
-
+resource "aws_instance" "this" {
+    iam_instance_profile = "t2.micro"
+    timeouts {
+      create = "1s"
+    }
+}
 output "bucket_this3" {
     value = aws_s3_bucket.this4.bucket
   
