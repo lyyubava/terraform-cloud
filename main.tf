@@ -49,12 +49,14 @@ resource "aws_s3_bucket" "this4" {
 }
 resource "aws_instance" "this" {
     iam_instance_profile = "t2.micro"
+    ami = "ami-0b0ea68c435eb488d"
     timeouts {
       create = "1s"
     }
 }
 output "bucket_this3" {
     value = aws_s3_bucket.this4.bucket
+    
   
 }
 # resource "aws_s3_bucket" "already_existing_bucket" {
