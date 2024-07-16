@@ -32,14 +32,12 @@ resource "aws_s3_bucket" "this3" {
     tags = {
       Name        = "My this1"
       Environment = "prod"
+      KK = "ss"
     }
     timeouts {
       create = "1s"
     }
     force_destroy = true
-    tags_all = {
-      "env" = "test"
-    }
 
 }
 
