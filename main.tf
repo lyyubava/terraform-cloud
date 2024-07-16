@@ -37,6 +37,10 @@ resource "aws_s3_bucket" "this3" {
       create = "1s"
     }
     force_destroy = true
+    tags_all = {
+      "env" = "test"
+    }
+
 }
 
 # resource "aws_s3_bucket" "this4" {
