@@ -2,30 +2,12 @@ provider "aws" {
     region = "us-east-1"
 }
 
-# resource "aws_s3_bucket" "this" {
-#     tags = {
-#       Name        = "My bucket"
-#       Environment = "prod"
-#     }
-
-# }
-# resource "aws_s3_bucket" "this1" {
-#     tags = {
-#       Name        = "My this1"
-#       Environment = "prod"
-#     }
-# }
-
-
-# resource "aws_s3_bucket" "this2" {
-#     tags = {
-#       Name        = "My this1"
-#       Environment = "prod"
-#     }
-#     timeouts {
-#       create = "2s"
-#     }
-#     # depends_on = [ null_resource.sleep ]
+resource "aws_s3_bucket" "this" {
+    tags = {
+      "Environment" : "dev"
+    }
+}
+ # depends_on = [ null_resource.sleep ]
 # }
 
 resource "aws_s3_bucket" "this3" {
