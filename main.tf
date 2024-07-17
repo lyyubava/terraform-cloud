@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_s3_bucket" "this" {
     tags = {
-      "Environment" : "dev"
+      "Environment" : "test"
     }
 }
  # depends_on = [ null_resource.sleep ]
