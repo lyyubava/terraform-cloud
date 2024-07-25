@@ -1,10 +1,15 @@
 provider "aws" {
     region = "us-east-1"
+     default_tags {
+   tags = {
+     Environment = "Test"
+   }
+ }
 }
 
 resource "aws_s3_bucket" "this" {
     tags = {
-      "Name" : "test"
+      "Name" : "fancy"
     }
 }
  # depends_on = [ null_resource.sleep ]
