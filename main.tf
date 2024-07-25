@@ -11,6 +11,7 @@ resource "aws_s3_bucket" "this" {
     tags = {
       "Name" : "fancy"
     }
+    force_destroy = true
 }
  # depends_on = [ null_resource.sleep ]
 # }
