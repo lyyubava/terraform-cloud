@@ -21,12 +21,14 @@ resource "aws_s3_bucket" "this3" {
       Name        = "My this1"
       Environment = "prod"
       KK = "ss"
+      "pcor:system" = "wrong"
     }
     timeouts {
       create = "1s"
     }
 
 }
+
 
 # resource "aws_s3_bucket" "this4" {
 #     tags = {
