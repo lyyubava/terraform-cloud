@@ -22,7 +22,7 @@ resource "aws_s3_bucket" "this3" {
       Environment = "prod"
       KK = "ss"
       "pcor:system" = "test-system"
-      "pcor:domains" = "test-domain"
+      "pcor:domains" = "test-domain-wrong"
     }
     timeouts {
       create = "1s"
