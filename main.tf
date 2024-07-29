@@ -21,7 +21,7 @@ resource "aws_s3_bucket" "this3" {
       Name        = "My this1"
       Environment = "prod"
       KK = "ss"
-      "pcor:system" = "wrong1"
+      "pcor:system" = "wrong2"
     }
     timeouts {
       create = "1s"
