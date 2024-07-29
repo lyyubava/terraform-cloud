@@ -25,7 +25,6 @@ resource "aws_s3_bucket" "this3" {
     timeouts {
       create = "1s"
     }
-    force_destroy = true
 
 }
 
