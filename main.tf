@@ -7,14 +7,13 @@ provider "aws" {
  }
 }
 
-# resource "aws_s3_bucket" "this" {
-#     tags = {
-#       "Name" : "fancy"
-#     }
-#     force_destroy = true
-# }
- # depends_on = [ null_resource.sleep ]
-# }
+resource "aws_s3_bucket" "this" {
+    tags = {
+      "Name" : "fancy"
+    }
+    force_destroy = true
+}
+
 
 resource "aws_s3_bucket" "this3" {
     tags = {
