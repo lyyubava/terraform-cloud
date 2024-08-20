@@ -29,6 +29,9 @@ resource "aws_s3_bucket" "this3" {
 
 }
 
+data "aws_s3_bucket" "invalid" {
+  bucket = aws_s3_bucket.this.bucket
+}
 
 # resource "aws_s3_bucket" "this4" {
 #     tags = {
