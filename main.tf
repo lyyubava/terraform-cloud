@@ -2,17 +2,17 @@ provider "aws" {
     region = "us-east-1"
      default_tags {
    tags = {
-     Environment = "Test"
+     "pcor:system" = "Test"
    }
  }
 }
 
-resource "aws_s3_bucket" "this" {
-    tags = {
-      "Name" : "fancy"
-    }
-    force_destroy = true
-}
+# resource "aws_s3_bucket" "this" {
+#     tags = {
+#       "Name" : "fancy"
+#     }
+#     force_destroy = true
+# }
  # depends_on = [ null_resource.sleep ]
 # }
 
@@ -21,8 +21,8 @@ resource "aws_s3_bucket" "this3" {
       Name        = "My this1"
       Environment = "prod"
       KK = "ss"
-      "pcor:system" = "test-system"
-      "pcor:domain" = "test-domain"
+      "pcor:system" = "equipment"
+      "pcor:domain" = "cloud-runtime"
     }
     timeouts {
       create = "1s"
