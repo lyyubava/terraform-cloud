@@ -10,7 +10,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "my_instance" {
-  ami           = "ami-08a0d1e16fc3f61ea"  # Example AMI ID
+  ami           = "ami-08a0d1e16fc3f61ea" 
   instance_type = "t2.micro"
 
   tags = {
@@ -21,9 +21,9 @@ resource "aws_instance" "my_instance" {
   }
 }
 
-# data "aws_instance" "filtered_instance" {
-#   filter {
-#     name   = "tag:Environment"
-#     values = ["Development"]
-#   }
-# }
+data "aws_instance" "filtered_instance" {
+  filter {
+    name   = "tag:pcor-system"
+    values = ["invalid-system"]
+  }
+}
