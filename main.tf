@@ -26,4 +26,8 @@ data "aws_instance" "filtered_instance" {
     name   = "tag:pcor-system"
     values = ["invalid-system"]
   }
+  filter {
+    name   = "tag:pcor-domain"
+    values = ["invalid-domain"]
+  }
 }
