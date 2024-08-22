@@ -15,8 +15,6 @@ resource "aws_instance" "my_instance" {
   tags = {
     Name        = "Test pcor instance"
     Environment = "Test"
-    "pcor-system" = "invalid-system"
-    "pcor-domain" = "invalid-domain"
     ChangeResource = "tagValue"
   }
 }
