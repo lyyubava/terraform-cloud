@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1"
   default_tags {
     tags = {
-      "pcor-system" = "equipment"
+      "pcor-system" = "api"
       "pcor-domain" = "cloud-runtime"
     }
   }
