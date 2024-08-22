@@ -1,12 +1,5 @@
 provider "aws" {
   region = "us-east-1"
-  # default_tags {
-  #   tags = {
-  #     "pcor-system" = "Test"
-  #     "pcor-system" = "equipment"
-  #     "pcor-domain" = "cloud-runtime"
-  #   }
-  # }
 }
 
 resource "aws_instance" "my_instance" {
@@ -21,7 +14,7 @@ resource "aws_instance" "my_instance" {
   }
 }
 
-data "aws_instance" "filtered_instance" {
+data "aws_instances" "filtered_instance" {
   filter {
     name   = "tag:pcor-system"
     values = ["invalid-system"]
@@ -31,3 +24,11 @@ data "aws_instance" "filtered_instance" {
     values = ["invalid-domain"]
   }
 }
+
+  # default_tags {
+  #   tags = {
+  #     "pcor-system" = "Test"
+  #     "pcor-system" = "equipment"
+  #     "pcor-domain" = "cloud-runtime"
+  #   }
+  # }
