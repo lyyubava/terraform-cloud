@@ -9,17 +9,17 @@ provider "aws" {
   # }
 }
 
-resource "aws_instance" "my_instance" {
-  ami           = "ami-08a0d1e16fc3f61ea"  # Example AMI ID
-  instance_type = "t2.micro"
+# resource "aws_instance" "my_instance" {
+#   ami           = "ami-08a0d1e16fc3f61ea"  # Example AMI ID
+#   instance_type = "t2.micro"
 
-  tags = {
-    Name        = "Test pcor instance"
-    Environment = "Test"
-    "pcor-system" = "invalid-system"
-    "pcor-domain" = "invalid-domain"
-  }
-}
+#   tags = {
+#     Name        = "Test pcor instance"
+#     Environment = "Test"
+#     "pcor-system" = "invalid-system"
+#     "pcor-domain" = "invalid-domain"
+#   }
+# }
 
 # data "aws_instance" "filtered_instance" {
 #   filter {
